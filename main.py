@@ -3,10 +3,15 @@ from pygame.locals import *
 from gamelib import SimpleGame
  
 class SquashGame(SimpleGame):
-    pass
+    def __init__(self,title):
+    	self.title = title
+    	self.game_over = False
+
+    def init(self):
+    	super(SquashGame,self).init()
  
 def main():
-    game = SquashGame()
+    game = SquashGame('SquashGame')
     game.run()
  
 if __name__ == '__main__':
