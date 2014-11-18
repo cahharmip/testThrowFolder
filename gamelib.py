@@ -9,9 +9,9 @@ class SimpleGame(object):
         self.game_over = False
 
     def init(self):
-        self.game_init()
+        self.__game_init()
 
-    def game_init(self):
+    def __game_init(self):
         pygame.init()
         self.clock = pygame.time.Clock()
         self.surface = pygame.display.set_mode(self.window_size)
@@ -19,14 +19,12 @@ class SimpleGame(object):
         self.font = pygame.font.SysFont("monospace", 20)
 
     def run(self):
-        # while not self.game_over:
-        #     for event in pygame.event.get(): # process events
-        #         if (event.type == QUIT) or \
-        #             (event.type == KEYDOWN and event.key == K_ESCAPE):
-        #             self.game_over = True
+        self.init()
+        while True:
+            self.update()
+            self.render()
+            self.clock.tick(self.fps)
 
-        # pass
-        pass
 
     def update(self):
         pass
